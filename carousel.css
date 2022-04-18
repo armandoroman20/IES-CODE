@@ -30,6 +30,9 @@
   height: 16.5em;
 }
 
+.carousel-control-next, .carousel-control-prev {
+  width: 0;
+}
 /* .fa .fa-chevron-left .fa-lg .text-muted {
     height: 20%;
     width: 20%;
