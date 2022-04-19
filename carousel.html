@@ -25,7 +25,7 @@
         id="carouselExample"
         class="carousel slide"
         data-ride="carousel"
-        data-interval="9000"
+        data-interval="90000"
       >
         <div class="carousel-inner row w-100 mx-auto" role="listbox">
           <div class="carousel-item col-lg-4 active">
@@ -155,7 +155,12 @@
           role="button"
           data-slide="prev"
         >
-          <i class="fa fa-chevron-left fa-lg text-muted"></i>
+          <img
+            class="custom-arrow-icon left-icon"
+            src="LeftArrow.png"
+            alt="right arrow icon"
+          />
+          <!-- <i class="fa fa-chevron-left fa-lg text-muted"></i> -->
           <span class="sr-only">Previous</span>
         </a>
         <a
@@ -164,7 +169,12 @@
           role="button"
           data-slide="next"
         >
-          <i class="fa fa-chevron-right fa-lg text-muted"></i>
+          <img
+            class="custom-arrow-icon right-icon"
+            src="RightArrow.png"
+            alt="left arrow icon"
+          />
+          <!-- <i class="fa fa-chevron-right fa-lg text-muted"></i> -->
           <span class="sr-only">Next</span>
         </a>
       </div>
@@ -185,6 +195,29 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script></script>
+    <script>
+      $("#carouselExample").on("slide.bs.carousel", function (e) {
+        var $e = $(e.relatedTarget);
+        var idx = $e.index();
+        var itemsPerSlide = 3;
+        var totalItems = $(".carousel-item").length;
+
+        if (idx >= totalItems - (itemsPerSlide - 1)) {
+          var it = itemsPerSlide - (totalItems - idx);
+          for (var i = 0; i < it; i++) {
+            // append slides to end
+            if (e.direction == "left") {
+              $(".carousel-item" + ".col-lg-4")
+                .eq(i)
+                .appendTo(".carousel-inner");
+            } else {
+              $(".carousel-item" + ".col-lg-4")
+                .eq(0)
+                .appendTo(".carousel-inner");
+            }
+          }
+        }
+      });
+    </script>
   </body>
 </html>

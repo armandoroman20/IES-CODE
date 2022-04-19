@@ -15,7 +15,7 @@
   /* left: 0; */
   /* right: 0; */
   height: 100%;
-  width: 95%;
+  width: 93.5%;
   opacity: 0;
   transition: .5s ease;
   background-color: #0AA3E5;
@@ -56,6 +56,19 @@
   width: 0;
 }
 
+.custom-arrow-icon {
+  height: .938rem;
+  width: .938rem;
+}
+
+.left-icon:hover {
+  transform: rotate(-45deg);
+}
+
+
+.right-icon:hover {
+  transform: rotate(45deg);
+}
 @media (min-width: 768px) {
 
   /* show 3 items */
