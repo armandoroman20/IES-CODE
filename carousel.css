@@ -50,6 +50,21 @@
 .carousel-item{
   width: 24.5em;
   height: 16.5em;
+  overflow: hidden;
+}
+
+/* .carousel-item {
+  
+  height: 16.5em;
+  overflow: hidden;
+} */
+
+.img-fluid {
+  /* max-width: 100%; */
+  /* height: 100%; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carousel-control-next, .carousel-control-prev {
