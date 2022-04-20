@@ -47,10 +47,10 @@
   color: white;
 }
 
-.carousel-item, .carousel-2-item{
+.carousel-item, .carousel-2-item, .carousel-3-item{
   width: 24.5em;
   height: 16.5em;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* .carousel-item {
@@ -110,7 +110,7 @@
   .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
       position: absolute;
       top: 0;
-      /* right: -25%; */
+      right: -50%; /* this hides the item from overflowing from the right */
       z-index: -1;
       display: block;
       visibility: visible;
