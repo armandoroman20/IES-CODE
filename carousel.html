@@ -22,13 +22,13 @@
   <body>
     <div class="container-fluid">
       <div
-        id="carouselExample"
+        id="carousel-1"
         class="carousel slide"
         data-ride="carousel"
         data-interval="90000"
       >
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-          <div class="carousel-item col-lg-4 active">
+        <div class="carousel-1 carousel-inner row w-100 mx-auto" role="listbox">
+          <div class="carousel-1-item carousel-item col-lg-4 active">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -43,7 +43,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -58,7 +58,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item col-lg-4">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -73,7 +73,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item col-lg-4">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -88,7 +88,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item col-lg-4">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -103,7 +103,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item col-lg-4">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -118,7 +118,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item col-lg-4">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -133,7 +133,7 @@
               >
             </div>
           </div>
-          <div class="carousel-item col-lg-4">
+          <div class="carousel-1-item carousel-item col-lg-4">
             <img
               class="img-fluid mx-auto d-block"
               src="https://i.insider.com/5d30e292a47b5a103347bdc4?width=1136&format=jpeg"
@@ -151,7 +151,7 @@
         </div>
         <a
           class="carousel-control-prev"
-          href="#carouselExample"
+          href="#carousel-1"
           role="button"
           data-slide="prev"
         >
@@ -165,7 +165,7 @@
         </a>
         <a
           class="carousel-control-next text-faded"
-          href="#carouselExample"
+          href="#carousel-1"
           role="button"
           data-slide="next"
         >
@@ -179,7 +179,9 @@
         </a>
       </div>
     </div>
-
+    <div style="background-color: blue; padding-top: 10%">TEXT</div>
+    <div class="container-fluid">
+      
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -196,28 +198,30 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      $("#carouselExample").on("slide.bs.carousel", function (e) {
+      $("#carousel-1").on("slide.bs.carousel", function (e) {
         var $e = $(e.relatedTarget);
         var idx = $e.index();
         var itemsPerSlide = 3;
-        var totalItems = $(".carousel-item").length;
+        var totalItems = $(".carousel-1-item").length;
 
         if (idx >= totalItems - (itemsPerSlide - 1)) {
           var it = itemsPerSlide - (totalItems - idx);
           for (var i = 0; i < it; i++) {
             // append slides to end
             if (e.direction == "left") {
-              $(".carousel-item" + ".col-lg-4")
+              $(".carousel-item" && ".col-lg-4")
                 .eq(i)
-                .appendTo(".carousel-inner");
+                .appendTo(".carousel-1");
             } else {
-              $(".carousel-item" + ".col-lg-4")
+              $(".carousel-item" && ".col-lg-4")
                 .eq(0)
-                .appendTo(".carousel-inner");
+                .appendTo(".carousel-1");
             }
           }
         }
       });
+
+    
     </script>
   </body>
 </html>
