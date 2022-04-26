@@ -191,3 +191,27 @@ $("#carousel-1").on("slide.bs.carousel", function (e) {
       }
     }
   });
+
+  $("#carousel-9").on("slide.bs.carousel", function (e) {
+    var $e = $(e.relatedTarget);
+
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $(".carousel-9-item").length;
+
+    if (idx >= totalItems - (itemsPerSlide - 1)) {
+      var it = itemsPerSlide - (totalItems - idx);
+      for (var i = 0; i < it; i++) {
+        // append slides to end
+        if (e.direction == "left") {
+          $(".carousel-9-item" + ".col-lg-4")
+            .eq(i)
+            .appendTo(".carousel-9");
+        } else {
+          $(".carousel-9-item" + ".col-lg-4")
+            .eq(0)
+            .appendTo(".carousel-9");
+        }
+      }
+    }
+  });
